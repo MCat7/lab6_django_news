@@ -5,10 +5,21 @@
     <title>Title</title>
 </head>
 <body>
-<h1>{{ new.news_text }}</h1>
-<br>
-<p>{{ textNews.text }}</p>
-<br>
+{% extends 'base.html' %}
+{% block main %}
 
+<h1>{{ new.news_text }}</h1>
+<hr>
+<p>{{ textNews.text }}</p>
+<hr>
+   <form method="post">
+        {% csrf_token %}
+        <a href=".."
+           class="btn btn-warning btn-block">
+            Назад
+        </a>
+    </form>
+
+{% endblock %}
 </body>
 </html>
